@@ -47,6 +47,11 @@
     <Compile Include="Common\ContextElement.cs" />
     <Compile Include="Common\ElementSelector.cs" />
     <Compile Include="Common\IUIContext.cs" />
+    <Compile Include="ExtensionApproach\ExtendedPage.cs" />
+    <Compile Include="ExtensionApproach\ExtendedPage.Elements.cs" />
+    <Compile Include="ExtensionApproach\Extensions\IUIButtonContextExtensions.cs" />
+    <Compile Include="ExtensionApproach\Extensions\IUIDropdownContextExtensions.cs" />
+    <Compile Include="ExtensionApproach\Extensions\IUIFieldContextExtensions.cs" />
     <Compile Include="InterfaceApproach\InterfacedPage.Elements.cs" />
     <Compile Include="InterfaceApproach\InterfacedPage.cs" />
     <Compile Include="InterfaceApproach\Interfaces\IUIAlertContext.cs" />
@@ -66,12 +71,11 @@
     <Compile Include="InterfaceApproach\Interfaces\IUIValidationContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Highlighter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ExtensionApproach\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
