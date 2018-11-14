@@ -8,8 +8,11 @@ namespace InterfaceExtension.ExtensionApproach.Extensions
 	{
 		public static List<string> GetDropdownOptions(this IUIContext context, string fieldId)
 		{
-			var elementSelector = context.GetElementSelector(ContextElement.Field, fieldId);
-			return Browser.GetDropdownOptions(elementSelector);
+			return Convention.InvokeOverridden(context, () =>
+			{
+				var elementSelector = context.GetElementSelector(ContextElement.Field, fieldId);
+				return Browser.GetDropdownOptions(elementSelector);
+			}, fieldId);
 		}
 
 		public static void ClickDropdownLink(this IUIContext context, string fieldId, string button)

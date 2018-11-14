@@ -7,9 +7,11 @@ namespace InterfaceExtension.ExtensionApproach.Extensions
 	{
 		public static bool IsFieldPresent(this IUIContext context, string fieldId)
 		{
-			//base implementation
-			var elementSelector = context.GetElementSelector(ContextElement.Field, fieldId);
-			return Browser.IsElementPresent(elementSelector);
+			return Convention.InvokeOverridden(context, () =>
+			{
+				var elementSelector = context.GetElementSelector(ContextElement.Field, fieldId);
+				return Browser.IsElementPresent(elementSelector);
+			}, fieldId);
 		}
 
 		public static string GetFieldValue(this IUIContext context, string fieldId)

@@ -52,6 +52,7 @@
     <Compile Include="ExtensionApproach\Extensions\IUIButtonContextExtensions.cs" />
     <Compile Include="ExtensionApproach\Extensions\IUIDropdownContextExtensions.cs" />
     <Compile Include="ExtensionApproach\Extensions\IUIFieldContextExtensions.cs" />
+    <Compile Include="ExtensionApproach\Extensions\Convention.cs" />
     <Compile Include="InterfaceApproach\InterfacedPage.Elements.cs" />
     <Compile Include="InterfaceApproach\InterfacedPage.cs" />
     <Compile Include="InterfaceApproach\Interfaces\IUIAlertContext.cs" />

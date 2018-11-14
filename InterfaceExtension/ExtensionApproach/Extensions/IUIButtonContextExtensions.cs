@@ -17,8 +17,11 @@ namespace InterfaceExtension.ExtensionApproach.Extensions
 
 		public static bool IsButtonPresent(this IUIContext context, string buttonId)
 		{
-			var elementSelector = context.GetElementSelector(ContextElement.Button, buttonId);
-			return Browser.IsElementPresent(elementSelector);
+			return Convention.InvokeOverridden(context, () =>
+			{
+				var elementSelector = context.GetElementSelector(ContextElement.Button, buttonId);
+				return Browser.IsElementPresent(elementSelector);
+			}, buttonId);
 		}
 	}
 }

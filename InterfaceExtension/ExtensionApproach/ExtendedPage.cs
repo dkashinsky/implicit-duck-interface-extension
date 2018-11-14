@@ -12,7 +12,7 @@ namespace InterfaceExtension.ExtensionApproach
 		/// <remarks>
 		/// this is implicitly implemented duck type convention for extension method
 		/// </remarks>
-		bool IsFieldPresent(string fieldId)
+		public bool IsFieldPresent(string fieldId)
 		{
 			if (fieldId == Field.LastName)
 			{
