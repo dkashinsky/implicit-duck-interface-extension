@@ -22,8 +22,11 @@ namespace InterfaceExtension.InterfaceApproach
 
 		List<string> IUIDropdownContext.GetDropdownOptions(string fieldId)
 		{
-			var options = new List<string> { "Option1", "Option2", "Option3" };
-			return options;
+			//all ui contexts that implement this interface without specific steps will need to copy this code across all implementations,
+			//or use some base class. As we have a lot of interfaces, this base class can bacome a super container which contains base implementations for
+			//all known interfaces in order to support steps execution
+			var elementSelector = GetElementSelector(ContextElement.Field, fieldId);
+			return Browser.GetDropdownOptions(elementSelector);
 		}
 
 		ElementSelector IUIContext.GetElementSelector(ContextElement elementType, string elementId)
@@ -43,7 +46,11 @@ namespace InterfaceExtension.InterfaceApproach
 
 		bool IUIButtonContext.IsButtonPresent(string buttonId)
 		{
-			throw new NotImplementedException();
+			//all ui contexts that implement this interface without specific steps will need to copy this code across all implementations,
+			//or use some base class. As we have a lot of interfaces, this base class can bacome a super container which contains base implementations for
+			//all known interfaces in order to support steps execution
+			var elementSelector = GetElementSelector(ContextElement.Button, buttonId);
+			return Browser.IsElementPresent(elementSelector);
 		}
 
 		bool IUIFieldContext.IsFieldEnabled(string fieldId)
@@ -53,7 +60,15 @@ namespace InterfaceExtension.InterfaceApproach
 
 		bool IUIFieldContext.IsFieldPresent(string fieldId)
 		{
-			throw new NotImplementedException();
+			//some specific stuff so interface is reasonable
+			if (fieldId == Field.LastName)
+			{
+				Console.WriteLine("Specific approach to check if element is present...");
+				return false;
+			}
+			
+			var elementSelector = GetElementSelector(ContextElement.Field, fieldId);
+			return Browser.IsElementPresent(elementSelector);
 		}
 
 		void IUIDropdownContext.SelectDropdownOption(string fieldId, string option)

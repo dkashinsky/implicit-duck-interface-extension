@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Browser.cs" />
     <Compile Include="Common\ContextElement.cs" />
     <Compile Include="Common\ElementSelector.cs" />
     <Compile Include="Common\IUIContext.cs" />
