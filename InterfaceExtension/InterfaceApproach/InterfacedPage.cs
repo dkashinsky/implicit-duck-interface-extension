@@ -1,5 +1,6 @@
 ﻿using InterfaceExtension.Common;
 using InterfaceExtension.InterfaceApproach.Interfaces;
+using InterfaceExtension.Utils;
 using System;
 using System.Collections.Generic;
 
@@ -63,10 +64,10 @@ namespace InterfaceExtension.InterfaceApproach
 			//some specific stuff so interface is reasonable
 			if (fieldId == Field.LastName)
 			{
-				Console.WriteLine("Specific approach to check if element is present...");
+				Highlighter.ConsoleWriteLine($"Specific approach to check if element ({fieldId}) is present...", ConsoleColor.Red);
 				return false;
 			}
-			
+
 			var elementSelector = GetElementSelector(ContextElement.Field, fieldId);
 			return Browser.IsElementPresent(elementSelector);
 		}

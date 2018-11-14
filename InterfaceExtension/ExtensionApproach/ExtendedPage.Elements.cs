@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace InterfaceExtension.InterfaceApproach
+namespace InterfaceExtension.ExtensionApproach
 {
-	public partial class InterfacedPage : IUIContext
+	public partial class ExtendedPage : IUIContext
 	{
 		public static class Field
 		{
