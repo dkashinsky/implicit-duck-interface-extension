@@ -1,2 +1,2 @@
-# implicit-duck-interface-extension
+# interface-extension
 Some kind of structural typing in convension with .net class extension

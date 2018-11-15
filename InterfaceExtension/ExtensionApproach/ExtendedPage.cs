@@ -1,4 +1,5 @@
 ﻿using InterfaceExtension.Common;
+using InterfaceExtension.ExtensionApproach.Extensions;
 using InterfaceExtension.Utils;
 using System;
 
@@ -9,9 +10,7 @@ namespace InterfaceExtension.ExtensionApproach
 	/// </remarks>
 	public partial class ExtendedPage
 	{
-		/// <remarks>
-		/// this is implicitly implemented duck type convention for extension method
-		/// </remarks>
+		[Override]
 		public bool IsFieldPresent(string fieldId)
 		{
 			if (fieldId == Field.LastName)
